@@ -1,0 +1,11 @@
+let _name = prompt("이름을 입력하세요")
+let _menu = prompt("원하는 메뉴를 입력하세요")
+let _quantity = prompt("주문하는 메뉴의 수량을 입력하세요")
+
+console.log("[주문 접수]")
+console.log("이름")
+console.log(_name)
+console.log("메뉴")
+console.log(_menu)
+console.log("수량")
+console.log(_quantity)
