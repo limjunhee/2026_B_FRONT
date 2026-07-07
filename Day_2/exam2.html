@@ -2,7 +2,7 @@
 <html> <!-- html의 시작 -->
     <head> <!-- html의 옵션(헤더)의 시작 -->
         <meta charset="UTF-8"><!-- HTML 코드의 번역(인코딩) 방법, UTF-8 한글지원-->
-        <title>day 1 title</title>
+        <title>day 2 title</title>
     </head> <!-- html의 옵션(헤더)의 끝 -->
 
     <body>
@@ -47,7 +47,29 @@
         <a href="https://www.naver.com/">네이버 링크</a>
         <a href="exam1.html">실습 html로 이동</a>
         <a href="tel:010-4913-7655"> 모바일 환경에서 전화 앱으로 연결되는 하이퍼링크</a>
-        
 
+        <img src="./images.jpg"/> <!-- img: 이미지 마크업-->
+        <img src="../images.jpg" /> <!-- 상위 폴더의 이미지를 가져옴 -->
+
+        <img src="C:\2026_B_FRONT\Day_2\exam2.html" /> <!-- 절대 경로-->
+
+        <!-- 상대 경로(현재 코드를 작성하는 위치 기준으로 불러올 파일의 경로를 지정) -->
+        <!-- ./ : 현재 폴더를 뜻함 , ../ : 상위 폴더로 1번 이동, ../../ : 상위 폴더로 2번 이동-->
+        <!-- Day_2 폴더 기준으로 상위 폴더 1번 이동시? = 2026_B_FRONT 폴더로 이동-->
+        
+        <!-- 절대 경로(불러올 파일의 전체 경로를 지정함, 파일 오른쪽 클릭 후 '경로 복사' 누르면 절대경로 복사 가능)-->
+        <!-- C:\2026_B_FRONT\Day_2\exam2.html -->
+
+        <br />
+        <audio src="audio.mp3" controls> </audio> <!-- audio: 오디오 마크업-->
+        <video src="video.mp4" controls></video> <!-- video: 비디오 마크업-->
+        <!-- autoplay 브라우저 정책상 불가능해지고, muted(음소거)는 가능해졌다. -->
+        
+        <!-- 유튜브 영상 넣기 -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LTl0sVmxYu4?si=QXsPnRdOIVeltfWh"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
     </body>
 </html> <!-- html의 끝 -->
