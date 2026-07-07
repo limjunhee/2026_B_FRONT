@@ -1,4 +1,4 @@
-let _name = prompt("이름을 입력하세요")
+let _name = prompt("이름을 입력하세요.")
 let _exercise = prompt("오늘 한 운동은 무엇인가요?")
 let _time = prompt("오늘 운동을 총 몇분 하셨나요?")
 let _calrorie = _time * 7
