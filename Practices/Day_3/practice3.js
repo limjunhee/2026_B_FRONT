@@ -54,7 +54,7 @@
 // // 70점 미만: 'C'
 // let score = prompt("[문제 6] 점수 입력 (100점 만점))")
 // let grade = score >= 90 ? "A" : score >= 80 ? "B" : "C"
-// document.querySelector('h2').innerHTML = `<h3>등급 결과: ${grade}</h3>`
+// document.querySelector('h2').innerHTML = `<h2>등급 결과: ${grade}</h2>`
 
 
 
