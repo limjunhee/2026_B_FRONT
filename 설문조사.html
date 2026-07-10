@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>설문조사</title>
+    <style>
+        button{
+            background-color: skyblue;
+            color: white;
+            border: 0px;
+        }
+        body{
+            background-color:white;
+            background-image: url(img/성결대마크.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main-image" style = "text-align: center;">
+        <!-- <img src="./img/성결대마크.png" width="150px" height="150px" > -->
+        <div>
+            <!-- <h1>AI 딥러닝(Python) 중심 프론트엔드 백엔드 풀스택 개발</h1> -->
+            <h2>사전 설문조사<h2>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <h3>질문 목록</h3>
+        <hr>
+        <div>
+            <ui>
+                <br>
+                <li>1. 이름을 입력하세요<br><input type="text"></li>
+                <br>
+                <hr>
+                <br>
+                <li>
+                    2. 학년을 선택하세요
+                    <br>
+                    <select>
+                        <option value="1" disabled selected>1학년</option>
+                        <option value="2" >2학년</option>
+                        <option value="3" >3학년</option>
+                        <option value="4" >4학년</option>
+                    </select>
+                </li>
+                <br>
+                <hr>
+                <br>
+                <li>3. 학과를 입력하세요<br><input type="text"></li>
+                <br>
+                <hr>
+                <br>
+                <li>4. 성별을 선택하세요<br><input type="radio" name="성별선택">남성   <input type="radio" name="성별선택">여성</li>
+                <br>
+                <hr>
+                <br>
+                <li>5. 해당 교육 과정을 신청한 이유는 무엇인가요? <br> 
+                    <input type="checkbox" name="신청이유">취업 
+                    <input type="checkbox" name="신청이유">학습 
+                    <input type="checkbox" name="신청이유">자기계발 
+                    <input type="checkbox" name="신청이유">포트폴리오
+                </li>
+                <br>
+                <hr>
+                <li>
+                    <br>
+                    6. 교육 과정 전 궁금한 사항에 대해 적어주세요.<br><br>
+                    <textarea cols="50" rows="7"></textarea>
+                </li>
+                <br>
+                <br>
+                <hr>
+                <li>
+                    <button type="submit" onclick="설문제출()">제출</button>
+                </li>
+            </ui>
+        </div>
+    </div>
+</body>
+</html>
