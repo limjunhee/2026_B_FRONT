@@ -91,19 +91,21 @@ let numbers = [5, 3, 4, 1, 2];
 힌트: 중첩 for 반복문을 사용하며, 이웃한 두 요소를 비교하 위치를 바꿉니다.*/
 
 // let numbers = [5, 3, 4, 1, 2];
-// for (let i = 1; i <= numbers.length; i++){
-//     for (let k = 0; k <= numbers.length - 2 ; k++){
-//         for (let j = 1; j < numbers.length - 1; j++) {
-//             if (numbers[k] > numbers[j]) {
-//                 let temp = numbers[k]
-//                 numbers[k] = numbers[j]
-//                 numbers[j] = temp
-//             }
+// let notSwap = true;
+// for (let index = numbers.length; index > 0; index--) {
+//     for (let i = 0; i < index - 1; i++) {
+//         if (numbers[i] > numbers[i + 1]) {
+//             let temp = numbers[i]
+//             numbers[i] = numbers[i + 1]
+//             numbers[i + 1] = temp
+
+//             notSwap = false
 //         }
 //     }
+//     if (notSwap) break;
 // }
 // console.log(numbers)
-// // 틀렸음
+
 
 
 /*문제 7: 재고 관리 시스템
@@ -128,7 +130,7 @@ let stock = [10, 5, 20];*/
 //     }
 // } else{
 //     console.log("없는 상품입니다.")
-// } // for문ㅇㄷ???
+// } 
 
 
 
