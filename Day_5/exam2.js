@@ -198,3 +198,22 @@ for (let i = 0; i <= nameArray.length -1; i++){
 }
 
 document.querySelector('h3').innerHTML = html
+
+// // 10번 문제 교수님버전
+// // ㅁ+한자키 , ○ ●
+// for (let index = 0; index <= nameArray.length - 1; index++) { // 3회전 
+//     // 이름 대입 
+//     html = html + nameArray[index]
+//     // 점수 대입 
+//     // html = html + scores4[index]
+//     // 점수 도형으로 변경 , 점수에 나누기 10 했을때 10자리수 구하기.
+//     for (let 도형수 = 1; 도형수 <= 10; 도형수++) {            // 10회전 
+//         if (scores4[index] / 10 > 도형수) { html = html + "●" }
+//         else { html = html + "○" }
+//     } // for end 
+//     // 이름 마다(1번 반복될때마다) 줄바꿈( br ) 대입 
+//     html = html + "<br />"
+// } // for end 
+// document.querySelector("p").innerHTML = html; // 출력 
+// // 상위 for문이 1회 반복할때 마다 하위 for문은 전체 반복한다.
+// // 3회전 * 10회전 => 30회전 
