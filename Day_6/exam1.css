@@ -1,0 +1,94 @@
+h5  { color: yellow;}
+
+/* CSS 주석 */
+
+/* html 마크업에 스타일 적용 문법 */
+/* 
+    선택자 { 속성명 : 속성값 ; 속성명 : 속성값; }
+
+    선택자의 종류
+    1. *: 와일드카드라 부르며, 전체에 적용하고 싶을 때 사용함
+          단, 이미 다른 곳에 지정된 건 안됨
+    2. div, h1 등의 특정 마크업명
+    3. .className : 특정 클래스명 지정 (맨 앞에 점 찍어야 한다.) <- 대부분 사용하는 방식
+    4. #id : 특정 id명을 지정 (맨 앞에 #을 찍어야 한다.) <- 특정 구역 꾸밀 때 사용
+
+    선택자 우선순위
+        만약, 동일한 속성이 중복이면
+        * < 특정 마크업 < .className < #id < 인라인(HTML 마크업에다 직접 적는거)
+
+        만약 동일한 수준이라면 아래에 구성한 CSS를 적용한다.
+        - <마크업 style = "css문법"> 이걸 최우선으로 적용한다.
+
+    최대한 class 선택자를 활용하고 특정한 부분에서 id 선택자를 적용하는 방식을 많이 사용한다.
+
+    쉼표, >, 띄어쓰기를 이용하여 여러 개 선택자를 한번에 적용하는 방법도 존재함
+        선택자1, 선택자2 {속성명:속성값;}
+        선택자1 > 선택자2 {속성명:속성값;} (자식 선택자)
+        선택자1 선택자2 {속성명:속성값;} (자손 선택자)
+*/
+
+* {color: brown;}
+
+h6{color: aqua;}
+
+.구역1 { color: beige;}
+
+#구역2 {color: cadetblue;}
+#구역2 {color: tomato;}
+
+
+/* 
+자식 선택자 : 상위 선택자>하위선택자 
+*/
+div > h3 {color: green;} 
+
+
+/* 
+자손 선택자 : 상위선택자 자손선택자 
+해당 마크업의 모든 하위 선택자를 지정함
+*/
+div h3 {background-color: aqua;}
+
+/*
+복수 선택자: 선택자 2개 이상 작성
+*/
+h3, h4 { color: gold; }
+
+/* 
+중복을 방지하기 위한 다양한 선택자 제공
+*/
+html > body > div > ol > li {  }
+/* vs */
+#이름1 {}
+
+
+
+/* 누구를 {무엇을:어떻게;} */
+/* 속성값 뒤로 ; 이용하여 닫는다. */
+.title{
+    font-family: "궁서"; /* 글꼴 - font-family */
+    font-size: 12px; /* 글자 크기 */
+    font-style: italic; /* 글자 기울기 */
+    font-weight: bold; /* 글자 진하게 */
+}
+
+/* 웹 폰트 적용: 구글 폰트 혹은 눈누 홈페이지에서 웹 폰트 코드 복사해서 붙여넣기*/
+.content{
+    font-family: 'Pretendard'; /* 웹폰트 글꼴 */
+    color: red;              /* 글자 색 */
+    word-spacing: 10px;        /* 어간(단어와 단어 사이 간격) */
+    letter-spacing: 10px;      /* 자간(글자와 글자 사이 간격) */
+    line-height: 170%;         /* 줄 간격(백분율) */
+}
+
+.작성자{
+    text-align: center;         /* 텍스트 가로 정렬: left center right */
+    text-decoration: underline overline line-through;    /* underline: 밑줄, overline: 윗줄, line-through: 취소선 */
+    text-shadow: 10px 10px 1px blue;/* x축 (+ 오른쪽 - 왼쪽)*/
+    /* 색상 표현 방법 */
+    color: green;               /* 방법 1: 색상 명 기입 */
+    color: rgb(0, 255, 50);  /* 방법 2: rgb 기입 */
+    color: rgba(red, green, blue, alpha); /* 방법 3: rgb + a(투명도) 기입 */
+    color: #008000; /* 방법 4: 6자리의 색상 코드(헥스코드) 기입 */
+}

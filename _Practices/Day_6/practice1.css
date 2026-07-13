@@ -1,0 +1,27 @@
+h1{
+    font-family: "궁서";
+    font-style: italic;
+    font-weight: 900;
+}
+
+h3 {
+    font-family: 'YeogiOttaeJalnan';
+    color:blue;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+
+}
+
+@font-face {
+    font-family: 'YeogiOttaeJalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+p, h2 {
+    color: red;
+    text-decoration: overline underline line-through;
+    text-shadow: 1px 1px 1.5px gray;
+    text-align: center;
+}
