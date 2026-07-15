@@ -3,6 +3,8 @@
 }
 .box{
     width: 100px;
+    background-color: black;
+    color: white;
 }
 
 /* display: flex */
@@ -30,4 +32,41 @@
 .flexbox4 {
     display: flex;
     flex-direction: column; /*하위 요소들 세로 배치 */
+}
+
+.flexbox5 {
+    display: flex;
+    justify-content: flex-start; /* 하위 요소들 가로 정렬(왼쪽정렬/기본값) */
+}
+
+.flexbox6 {
+    display: flex;
+    justify-content: flex-end; /* 하위 요소들 가로 정렬(오른쪽 정렬) */
+}
+
+.flexbox7 {
+    display: flex;
+    justify-content: center; /* 하위 요소들 가로 정렬(가운데 정렬) */
+}
+
+.flexbox8 {
+    display: flex;
+    justify-content: space-between; /* 하위 요소들 가로 정렬(사이 여백을 균등하게 정렬) */
+}
+
+.flexbox9 {
+    display: flex;
+    justify-content: space-around; /* 사이 여백 균등하게 + 양쪽 여백 균등하게 정렬 */
+}
+
+.flexbox10 {
+    display: flex;
+    gap: 20px; /* 사이 여백을 직접 설정 */
+}
+
+.flexbox11 {
+    width: 250px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px 20px; /* 세로 여백, 가로 여백 직접 설정 */
 }
