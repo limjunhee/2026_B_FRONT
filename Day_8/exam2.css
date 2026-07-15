@@ -1,0 +1,33 @@
+*{
+    border: 1px solid red;
+}
+.box{
+    width: 100px;
+}
+
+/* display: flex */
+.flexbox1{ 
+    display:flex; 
+    width: 250px;
+
+    /* 만약에 하위요소들의 크기가 구역보다 커지면? */
+    flex-wrap: nowrap; /* nowrap 적용시 구역 내에서 줄바꿈 처리 안하고 자동 크기조정(기본값)*/
+}
+
+.flexbox2 {
+    display: flex;
+    width: 250px;
+
+    /* 만약에 하위요소들의 크기가 구역보다 커지면? */
+    flex-wrap: wrap; /* wrap 적용시 구역 내에서 자동 줄바꿈 처리해버림*/
+}
+
+.flexbox3 {
+    display: flex;
+    flex-direction: row; /* row 기본값(생략시), 하위 요소들 새로 배치 기능임 */
+}
+
+.flexbox4 {
+    display: flex;
+    flex-direction: column; /*하위 요소들 세로 배치 */
+}
