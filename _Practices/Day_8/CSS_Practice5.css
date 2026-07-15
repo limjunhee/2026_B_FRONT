@@ -1,0 +1,41 @@
+*{
+    /* border: 1px solid red; */
+    background-color: pink;
+}
+.mainbox{
+    /* border: 1px solid red; */
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    
+}
+
+.name{
+    font-weight: bold;
+    border: 3px solid white;
+    padding : 10px 70px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin: 15px;
+}
+
+button{
+    background-color: skyblue;
+    color: white;
+    width: 250px;
+    height: 50px;
+    margin: 15px 5px 10px 5px;
+    padding: auto;
+    border: 1px gray;
+    font-weight: bold;
+    border-radius: 15px;
+}

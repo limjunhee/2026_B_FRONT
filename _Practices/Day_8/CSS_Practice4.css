@@ -1,24 +1,25 @@
-
-.mainbox{
-    flex-direction: column; /*하위 요소들 세로 배치 */
+.mainbox {
+    flex-direction: column;/*하위 요소들 세로 배치 */
     width: 370px;
     border: 1px solid gray;
 }
+
 /* .mainbox{
     border: 1px solid gray;
 } */
-.mainbox > img{
+.mainbox>img {
     width: 370px;
     height: 450px;
     border-bottom: 1px solid gray;
 }
-.textbox{
+
+.textbox {
     width: 350px;
     margin-top: 0px;
     padding: 10px;
 }
 
-span{
+span {
     color: orange;
     font-weight: bold;
 }
