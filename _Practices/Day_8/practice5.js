@@ -269,27 +269,27 @@ const webtoons = [
  전지적 독자 시점 ★★★★★★★★★☆
 */
 
-// const webtoons = [
-//     { title: '나 혼자만 레벨업', rating: 9.8 },
-//     { title: '유미의 세포들', rating: 9.9 },
-//     { title: '전지적 독자 시점', rating: 9.7 }
-// ];
-// let html = ''
+const webtoons = [
+    { title: '나 혼자만 레벨업', rating: 9.8 },
+    { title: '유미의 세포들', rating: 9.9 },
+    { title: '전지적 독자 시점', rating: 9.7 }
+];
+let html = ''
 
-// for ( let i = 0; i <= webtoons.length - 1; i++ ){
-//     html += `${webtoons[i].title} : `
-//     let starCount = parseInt(webtoons[i].rating)
-//     for (let j = 1; j <= 10; j++){
-//         if (j <= starCount) {
-//             html += '★'
-//         } else {
-//             html += '☆'
-//         }
-//     }
-//     html += '<br>'    
-// }
+for ( let i = 0; i <= webtoons.length - 1; i++ ){
+    html += `${webtoons[i].title} : `
+    let starCount = parseInt(webtoons[i].rating)
+    for (let j = 1; j <= 10; j++){
+        if (j <= starCount) {
+            html += '★'
+        } else {
+            html += '☆'
+        }
+    }
+    html += '<br>'    
+}
 
-// document.write(html)
+document.write(html)
 
 
 /*문제11 : 공공데이터 포털 : 인천 부평구 맛집 현황 테이블 만들기
