@@ -61,5 +61,35 @@ HTML : 웹페이지 뼈대, JS : 동적 이벤트, CSS : 웹페이지 꾸미기
         4. display: none            /* 화면에 표시 안함 */
 
     [4] box-sizing : width 크기 기준점
-        content-box : 컨텐츠(기본값)
-        border-box : 컨텐츠 + 안쪽 여백(padding) 포함
+        content-box : 구역 크기를 컨텐츠 기준으로(기본값)
+        border-box : 구역 크기를 컨텐츠 + 안쪽 여백(padding) 포함시킴
+
+    [5] flex 속성: 하위 요소들의 배치 방법 지정
+        1. flex-wrap
+            - nowrap; : 하위 요소들의 크기가 더 크다면 자동으로 크기 맞춤(기본값)
+            - wrap; : 하위 요소들의 크기가 더 크다면 자동으로 줄바꿈
+        
+        2. flex-direction: 
+            - row;(기본값) : 하위 요소들의 가로 방향 배치
+            - column; : 하위 요소들의 세로 방향 배치
+
+        3. justify-content: 
+            - flex-start; : 가로 왼쪽 정렬(기본값)
+            - flex-end; : 가로 오른쪽 정렬
+            - center; : 가로 가운데 정렬
+            - space-between; : 양쪽 끝 여백 없이 여백 균등 정렬
+            - space-around; : 양쪽 여백 끝에 사이 여백의 50% 여백 주고 여백 균등 정렬
+            - space-evenly; : 양쪽 여백 끝과 사이 여백 균등하게 정렬
+
+        4. align-items:
+            - stretch; : 하위 요소들의 세로 크기가 고정이 아니면 자동으로 부모 세로 크기만큼 늘어남
+                            (기본값)
+            - center; : 세로 가운데 정렬
+            - flex-end; : 세로 밑변 정렬
+            - flex-start; : 세로 윗변 정렬
+
+        5. gap: (요소 간 간격)
+            - gap : [value]; (ex.gap:20px;) : 가로(행), 세로(열)의 간격을 직접 동일하게 지정
+            - gap : [row-gap] [column-gap]; (ex. gap: 10px 20px;) : 행 간격, 열 간격을 다르게 설정
+        
+        
