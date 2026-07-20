@@ -60,6 +60,8 @@ HTML : 웹페이지 뼈대, JS : 동적 이벤트, CSS : 웹페이지 꾸미기
             - img, input 등
         4. display: none            /* 화면에 표시 안함 */
 
+        flex;
+
     [4] box-sizing : width 크기 기준점
         content-box : 구역 크기를 컨텐츠 기준으로(기본값)
         border-box : 구역 크기를 컨텐츠 + 안쪽 여백(padding) 포함시킴
@@ -91,5 +93,3 @@ HTML : 웹페이지 뼈대, JS : 동적 이벤트, CSS : 웹페이지 꾸미기
         5. gap: (요소 간 간격)
             - gap : [value]; (ex.gap:20px;) : 가로(행), 세로(열)의 간격을 직접 동일하게 지정
             - gap : [row-gap] [column-gap]; (ex. gap: 10px 20px;) : 행 간격, 열 간격을 다르게 설정
-        
-        
