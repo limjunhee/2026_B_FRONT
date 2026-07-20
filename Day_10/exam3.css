@@ -1,0 +1,28 @@
+* {
+    border: 1px solid red;
+}
+
+#wrap{
+    width: 1280px; /* 웹표준 가로 크기(가장 흔함) */
+    margin: 0 auto; /* 가로 가운데 정렬*/
+}
+
+#header{
+    height: 100px;
+}
+
+#main{
+    display: flex; /* 해당 하위요소의 배치 방법*/
+    flex-wrap: nowrap; /* 하위 요소가 부모 요소보다 커지면 자동 맞춤*/
+    justify-content: space-between; /* 하위 요소 양끝여백없이 균등 정렬 */
+}
+
+#main>#content{
+    width: 840px;
+    height: 500px;
+}
+
+#main>#sidebar{
+    width : 420px;
+    height: 500px;
+}
