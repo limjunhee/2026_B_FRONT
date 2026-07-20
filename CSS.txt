@@ -55,7 +55,7 @@ HTML : 웹페이지 뼈대, JS : 동적 이벤트, CSS : 웹페이지 꾸미기
         1. display : inline;        /* 한 줄에 해당 구역을 포함 *크기 설정 X, 위/아래여백X */ 
             -span, a 등
         2. display : block;         /* 한 줄 차지 *크기설정 O, 여백O */
-            -div, h 등
+            -div, h1 등
         3. display: inline-block;   /* 한 줄에 해당 구역 포함 하면서 크기설정과 여백 설정 O */
             - img, input 등
         4. display: none            /* 화면에 표시 안함 */

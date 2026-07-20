@@ -1,0 +1,108 @@
+* {
+    /* border: 1px solid red; */
+    box-sizing: border-box; /* content와 padding 포함한 사이즈 정의.*/
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    /* a의 하이퍼링크 밑줄 제거하기 */
+    color: black;
+}
+
+/* li 글머리 제거*/
+li {
+    list-style-type: none;
+}
+
+
+
+#header{
+    width: 1280px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#logo-menu{
+    display: flex;
+    align-items: center;
+}
+
+#header-menu>ol{
+    display: flex;
+    justify-content: end;
+}
+
+#header-menu-up{
+    font-size: 12px;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+#header-menu-down{
+    font-size: 24px;
+    font-weight: bold;
+    gap: 20px;
+}
+
+#main-img>img{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#main{
+    display: flex;
+    width: 1280px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#sidebar{
+    font-size: 15px;
+    width: 320px;
+    
+}
+
+#sidebar>div{
+    padding: 15px;
+    border-bottom: 1px solid rgb(178, 178, 178);
+    margin-right: 30px;
+}
+
+#image-theory{
+    background-color: rgb(171, 169, 169);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#content{
+    width: 940px;
+    margin: 10px;
+}
+
+#content>hr{
+    margin: 20px 0px 20px 0px;    
+}
+#content>img{
+    display: block;
+    margin: 0 auto;
+}
+
+#footer{
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+
+#footer-content{
+    width: 1280px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px;
+}

@@ -26,3 +26,35 @@
     width : 420px;
     height: 500px;
 }
+
+#footer{ height: 50px;}
+
+/* ★height 주로 내용을물만큼 사용하므로 직접 지정하지 않음. */
+
+
+.parent{width: 500px; font-size: 20px;}
+/* 픽셀(px): 화면을 구성하는 가장 작은 점, 절댓값 */
+.px{
+    width: 200px; /*부모 요소 중 200px*/
+    font-size: 16px;
+    background-color: skyblue;
+}
+
+/* 백분(%): 자신이 속한 부모 요소를 기준의 크기를 기준으로 한 상대적인 비율 */
+/* width, height는 기본적으로 100%임 */
+/* 반응형 웹을 만들 때 유용하게 사용됨 */
+.percent{
+    width: 50%; /*부모 요소 500px중 50%-> 250px*/
+    font-size: 16px;
+    background-color: brown;
+}
+
+/* 3. rem: 자신이 속한 부모 요소와 상관 없이 HTML 뿌리 요소 비례하여 상대값 지정, 잘 안쓰는 편*/
+.rem{
+    font-size: 1.5rem; /* HTML 루트 폰트크기 16px -> 1.5(150%) -> 24px */
+    
+}
+
+/* 4. vw/vh: 자신이 속한 부모 요소와 상관없이 디바이스/브라우저 창에 비례하여 상대값 지정, 반응형 웹에 유용*/
+.vw{ width: 60vw; background-color: green;}
+.vh{ width: 200px; height: 30vh; background-color: greenyellow;}
