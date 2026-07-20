@@ -106,3 +106,8 @@ li {
     justify-content: space-between;
     padding: 10px;
 }
+
+#footer-left{
+    display: flex;
+    align-items: center;
+}
