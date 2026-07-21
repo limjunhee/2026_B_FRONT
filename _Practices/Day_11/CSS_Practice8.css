@@ -1,0 +1,19 @@
+#footer{
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+#footer-content{
+    display: flex;
+    justify-self: center;
+}
+
+#footer-content>div{
+    margin: 40px;
+    font-size: 10px;
+}
+
+#footer-left>div{
+    font-weight: bold;
+    font-size: 18px;
+}
