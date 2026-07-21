@@ -11,7 +11,7 @@ console.log(result1, result2)
 
 /*실습 2: 배열의 총합 구하기
 숫자로 이루어진 배열을 매개변수로 받아, for 반복문을 사용해 모든 요소의 합계를 구하여 반환하는 sumArray 함수를 만드세요. 아래 numbers 배열로 테스트해 보세요.
-const numbers = [10, 20, 30, 40, 50];*/
+*/
 const numbers = [10, 20, 30, 40, 50];
 function sumArray(arr){
     let sum = 0;
@@ -26,7 +26,7 @@ console.log(result3)
 
 /*실습 3: 가장 긴 단어 찾기
 문자열로 이루어진 배열을 매개변수로 받아, for 반복문을 사용해 가장 긴 단어를 찾아 반환하는 findLongestWord 함수를 만드세요. 아래 words 배열로 테스트해 보세요.
-const words = ['apple', 'banana', 'kiwi', 'strawberry'];*/
+*/
 const words = ['apple', 'banana', 'kiwi', 'strawberry'];
 function findLongestWord(arr){
     let longestWord = arr[0]
@@ -87,11 +87,7 @@ console.log(result6)
 /*실습 6: 상품 목록 페이지 만들기
 전역변수 products 배열 데이터를 이용하여, 각 상품을 소개하는 HTML 요소를 동적으로 만들어 페이지에 표시하는 renderProducts 함수를 만드세요.
 각 상품은 이름(<h4>), 가격(<p>), 재고(<p>)를 포함한 div로 묶여야 합니다.
-const products = [
-{ name: '노트북', price: 1200000, stock: 5 },
-{ name: '모니터', price: 350000, stock: 12 },
-{ name: '키보드', price: 80000, stock: 25 }
-];*/
+*/
 const products = [
     { name: '노트북', price: 1200000, stock: 5 },
     { name: '모니터', price: 350000, stock: 12 },
