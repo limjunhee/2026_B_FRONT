@@ -1,0 +1,89 @@
+* {
+    /* border: 1px solid red; */
+    box-sizing: border-box; /* content와 padding 포함한 사이즈 정의.*/
+    padding: 0px;
+    margin: 0px;
+}
+
+#main{
+    display: flex;
+    width: 1280px;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#sideBar{
+    width: 320px;
+}
+#sideBar-main {
+    background-color: darkcyan;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#sideBar>div{
+    padding: 10px;
+}
+
+#sideBar>input{
+    width: 200px;
+    height: 33px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+#sideBar>button {
+    padding: 5px;
+}
+#sideBar>#boldText{
+    font-weight: bold;
+    font-size: 25px;
+    border-top: 3px solid black;
+    border-bottom: 1px solid gray;
+}
+#content{
+    display: flex;
+    /* width: 940px; */
+    margin: 10px;
+}
+
+#left-content>#boldText{
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: 3px solid black;
+}
+
+#left-content{
+    width: 468px;
+}
+#left-content>#content{
+    display: flex;
+    justify-content: space-between;
+}
+#left-content>div{
+    margin: 10px;
+}
+#right-content{
+    width: 468px;
+    flex-wrap: flex;
+    justify-content: flex-start;
+}
+#right-content>#boldText{
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: 3px solid black;
+    margin: 7px;
+}
+
+
+#contents-row{
+    display: flex;
+    justify-content: flex-start;
+}
+#contents-row>div{
+    margin: 5px;
+}

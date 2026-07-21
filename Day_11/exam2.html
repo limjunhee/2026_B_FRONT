@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Day11 exam2</title>
+    <!-- <link rel='stylesheet' href='main.css'> -->
+
+    <!-- 4번 예제를 위한 스타일 지정 -->
+    <style> 
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1번 예제 -->
+    <h1 id="title"></h1>
+
+    <!-- 2번 예제 -->
+    <input id="usernameInput" />
+    <button id="submitBtn" onclick="greetings()">확인</button>
+    <p id="greeting"></p>
+
+    <!-- 3번 예제 -->
+    <div id="colorBox">컬러박스</div>
+    <button id="styleBtn" onclick="changeStyle()">스타일 변경</button>
+
+    <!-- 4번 예제 -->
+    <button id="themeBtn" onclick="toggleDarkMode()">테마 변경</button>
+
+    <!-- 5번 예제 -->
+    <div id="targetBox">targetBox</div>
+    <button id="removeBtn" onclick="removeBox()">박스 삭제</button>
+
+    <!-- 6번 예제 -->
+    <p class="item">아이템</p>
+    <p class="item">아이템</p>
+    <p class="item">아이템</p>
+
+    <!-- 7번 예제 -->
+    <img id="mainImage" src="https://placehold.co/600x400">
+    <button id="changeImgBtn" onclick="changeImg()">이미지 변경</button>
+
+    <!-- 8번 예제 -->
+    <br>
+    <select onchange="changeSelect()">
+        <option>1번</option>
+        <option>2번</option>
+        <option>3번</option>
+        <option>4번</option>
+    </select>
+
+    <!-- 9번 예제 -->
+    <br>
+    <input id="inputText" />
+    <button onclick="pushArray()">배열에 저장</button>
+    <div id="textArray"></div>
+</body>
+<script src="exam2.js"></script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>JS_Practice7</title>
+    <link rel='stylesheet' href='JS_Practice7.css'>
+</head>
+<body>
+    <h1 style="margin-left: 100px;">미니 가계부</h1>
+    <h3>등록 영역</h3>
+    <div>날짜선택 : <input type="date" id="date"/></div>
+    <div>항목입력 : <input type="text" id="content"/></div>
+    <div>금액입력 : <input type="number" id="price"/></div>
+    <button type="button" onclick="addList()">등록버튼</button>
+    <br/>
+    <h3>목록 영역</h3>
+    <table id="mainTable">
+        <thead>
+            <th>날짜</th> <th>항목</th> <th>금액</th>
+        </thead>
+        <tbody id="tableMain">
+            <tr>
+                <td>2025-06-19</td> <td>점심 식사</td><td>9000</td>
+            </tr>
+            <tr>
+                <td>2025-06-19</td><td>교통비</td><td>1500</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="JS_Practice7.js"></script>
+</html>
