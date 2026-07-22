@@ -68,7 +68,7 @@ function productPrint() {
         //만약 샘플 HTML 존재한다면 출력, 변수 자리에 ${} 변경하기
         html += `<tr>
                     <td> <img src="${product.pimg}" /> </td>
-                    <td> ${product.ccode} </td>
+                    <td> ${cname} </td>
                     <td> ${product.pname} </td>
                     <td> ${product.pprice} </td>
                     <td> ${product.pdate} </td>
@@ -126,9 +126,17 @@ function productAdd(){
     let category = document.querySelector(".category").value
     let name = document.querySelector('.name').value
     let price = document.querySelector('.price').value
-    let image = document.querySelector('.image').files //첨부파일은 .files 속성에서 첨부파일 자료를 가져옴
+    let image = document.querySelector('.image').files[0] //첨부파일은 .files 속성에서 첨부파일 자료를 가져옴, [0] 인덱스 지정해서 첫 번째로 받은거(단일) 가져옴
+    console.log(category)
+    console.log(name)
+    console.log(price)
+    console.log(image)
+    // 유효성 검사 - 카테고리를 선택하지 않은 상태라면?
+    if(category == 'disabled'){
+        alert('카테고리를 선택하십시오'); return;
+    }
 
-    //2. 입력받은 값을 객체화
+    //2. 입력받은 값을 객체화, 중간 검사 console.log로 실행하기
         // pcode는 제품 식별자로, 사용자가 직접 지정하는 게 아니라 자동으로 지정 (마지막 제품코드에 +1)
         // pdate -> 현재 시스템의 날짜/시간을 반환하는 라이브러리 함수 new Date()
             //현재연도: new Date().getFullYear() -> 연도만 빼옴
@@ -138,11 +146,16 @@ function productAdd(){
             // console.log(new Date().getMonth())
             // console.log(new Date().getDate())
     let pdate = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() }`
-    let object ={ ccode:category, pname:name, pprice:price, pimg:image, pcode:finalPcode+1, pdate:pdate}
+
+    let object ={ ccode:category, pname:name, pprice:price, 
+        pimg: image == undefined ? 'https://placehold.co/100x100' : URL.createObjectURL(image), // URL.createObjectURL(객체) 객체 주소 생성
+                    pcode:finalPcode+1, pdate:pdate 
+                }
     finalPcode += 1
     productList.push(object)
     console.log(object)
     
     productPrint()
+
     return;
 }   
