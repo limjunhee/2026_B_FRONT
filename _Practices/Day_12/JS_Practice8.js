@@ -45,7 +45,7 @@ let productList = [
     { 'pcode': 2, 'pname': '사이다', 'pprice': 2000, 'pimg': 'https://placehold.co/100x100', 'pdate': '2026-07-23', 'ccode': 1 }
 ]
 
-//전체조회 함수
+// 전체조회 함수
 productPrint() // JS 열릴 때 최초 한 번 실행
 function productPrint() {
     // 어디에
@@ -68,13 +68,13 @@ function productPrint() {
         //만약 샘플 HTML 존재한다면 출력, 변수 자리에 ${} 변경하기
         html += `<tr>
                     <td> <img src="${product.pimg}" /> </td>
-                    <td> ${product.pcode} </td>
+                    <td> ${product.ccode} </td>
                     <td> ${product.pname} </td>
                     <td> ${product.pprice} </td>
                     <td> ${product.pdate} </td>
                     <td>
                         <button class="deleteBtn" onclick = "productDelete(${product.pcode})">삭제</button>
-                        <button class="updateBtn" onclick = "productDelete(${product.pcode})">수정</button>
+                        <button class="updateBtn" onclick = "productUpdate(${product.pcode})">수정</button>
                     </td>
                 </tr>`
     }
@@ -83,17 +83,66 @@ function productPrint() {
     tbody.innerHTML = html
 }
 
-//삭제 함수
-function productDelete(){
-
+// 삭제 함수, 삭제할 제품 코드를 매개변수로 받아옴
+function productDelete(productCode){
+    // 1. 삭제할 pcode의 제품객체를 배열에서 찾는다.
+    for (let index = 0; index <= productList.length - 1; index++){
+        if (productList[index].pcode == productCode) {
+            // 2. 배열에서 요소 삭제 .splice(인덱스 번호, 개수)
+            productList.splice(index, 1)
+            alert('삭제 성공')
+            
+            // 3. 화면 최신화 -> 'React'에선 렌더링이라고 함.
+            productPrint()
+            return // 주의: return은 함수 탈출 vs break는 for문 탈출  (현재는 차이 없어서 뭘 쓰던지 상관없음)
+        }
+    }
 }
 
-//수정 함수
-function productUpdate(){
-    
+// 수정 함수
+function productUpdate(productCode){
+    // 1. 수정할 pcode의 제품객체를 배열에서 찾는다.
+    for (let index = 0; index <= productList.length - 1; index++) {
+        if (productList[index].pcode == productCode) {
+            let new_pname = prompt('수정할 제품명 입력')
+            let new_pprice = prompt('수정할 가격 입력')
+
+            productList[index].pname = new_pname
+            productList[index].pprice = new_pprice
+
+            alert('수정 성공')
+
+            productPrint()
+            return
+        }
+    }
 }
 
 // 등록 함수
+// 제품 식별자 = finalPcode
+let finalPcode = 2
 function productAdd(){
+    // 1. 입력받은 값 가져오기
+    let category = document.querySelector(".category").value
+    let name = document.querySelector('.name').value
+    let price = document.querySelector('.price').value
+    let image = document.querySelector('.image').files //첨부파일은 .files 속성에서 첨부파일 자료를 가져옴
 
-}
+    //2. 입력받은 값을 객체화
+        // pcode는 제품 식별자로, 사용자가 직접 지정하는 게 아니라 자동으로 지정 (마지막 제품코드에 +1)
+        // pdate -> 현재 시스템의 날짜/시간을 반환하는 라이브러리 함수 new Date()
+            //현재연도: new Date().getFullYear() -> 연도만 빼옴
+            //현재 월: new Date().getMonth()
+            //현재 일: new Date().getDate()
+            // console.log(new Date().getFullYear())
+            // console.log(new Date().getMonth())
+            // console.log(new Date().getDate())
+    let pdate = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() }`
+    let object ={ ccode:category, pname:name, pprice:price, pimg:image, pcode:finalPcode+1, pdate:pdate}
+    finalPcode += 1
+    productList.push(object)
+    console.log(object)
+    
+    productPrint()
+    return;
+}   
