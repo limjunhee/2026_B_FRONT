@@ -147,8 +147,9 @@ function productAdd(){
             // console.log(new Date().getDate())
     let pdate = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() }`
 
-    let object ={ ccode:category, pname:name, pprice:price, 
-        pimg: image == undefined ? 'https://placehold.co/100x100' : URL.createObjectURL(image), // URL.createObjectURL(객체) 객체 주소 생성
+    let object ={   
+                    ccode:category, pname:name, pprice:price, 
+                    pimg: image == undefined ? 'https://placehold.co/100x100' : URL.createObjectURL(image), // URL.createObjectURL(객체) 객체 주소 생성
                     pcode:finalPcode+1, pdate:pdate 
                 }
     finalPcode += 1
