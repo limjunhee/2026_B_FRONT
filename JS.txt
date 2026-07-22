@@ -213,3 +213,21 @@ console.log(age)   // 40인거 확인
     * 변수 호출과 함수 호출 구분하는 방법 -> 뒤에 소괄호 붙인게 함수 호출 부분임
         sum -> 변수 sum을 호출 /  sum() -> 함수 sum()을 호출
         
+
+- DOM : Document Object Model, 문서 객체 표준화
+    -> HTML( 마크업 언어 ) VS JS ( 프로그래밍 언어 )
+        1. document : 내장 객체 ( HTML 제어 / 조작 가능한 객체 )
+        2. 주요 속성
+            1) .querySelector( CSS선택자 )      : 특정한 선택자의 마크업 DOM 객체{ } 1개 반환
+            2) .querySelectorAll(  )            : 특정한 선택자의 마크업 DOM (배열)객체[ ] N개 반환 
+            3) .innerHTML = ' '                 : 마크업DOM 객체 내 사이에 HTML을 호출/대입
+                                                 <마크업> *여기* </마크업>, <div> <td> <h> <p> <span> 레이아웃 마크업에서 많이 사용
+                                                 <input>, <img> 등은 불가
+            4) .value                           
+                <마크업 value="여기!">, <input> <select> <textarea> 등등 주로 사용, <div> <td> 불가능                           
+            5) .style                           : 마크업 DOM 객체 내 CSS 문법을 대입
+            6) .src
+                <마크업 src="여기!">, <img> 등 주로 사용
+            7) .classList                       : 마크업 DOM 객체 내 class 목록을 반환받음
+            8) .classList.toggle( )             : 마크업 DOM 객체 내 class 목록을 반환받고 class를 추가/삭제 (토글)
+            9) .remove( )                       : 마크업 DOM 객체 삭제
