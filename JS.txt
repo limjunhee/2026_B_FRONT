@@ -231,3 +231,11 @@ console.log(age)   // 40인거 확인
             7) .classList                       : 마크업 DOM 객체 내 class 목록을 반환받음
             8) .classList.toggle( )             : 마크업 DOM 객체 내 class 목록을 반환받고 class를 추가/삭제 (토글)
             9) .remove( )                       : 마크업 DOM 객체 삭제
+
+
+- 함수들
+ 1) "문자열".toLocaleString() : 천 단위 콤마 입힘
+ 2) new Date() : 시스템 날짜/시간 객체
+        new Date().getFullYear()    : 연도(year) 반환
+        new Date().getMonth()       : 월(month) 반환
+        new Date().getDate()        : 일(Day) 반환

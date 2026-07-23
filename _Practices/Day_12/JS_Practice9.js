@@ -16,35 +16,34 @@ let departmentList = [
 { 'dcode': 3, 'dname': '기획팀' }
 ] // 부서 목록
 
-let departmentStaffList = [
-    { 'dcode': 1, 'dname': '개발팀', 'ecode': 1, 'name': '김민준' },
-    { 'dcode': 2, 'dname': '디자인팀', 'ecode': 2, 'name': '이서연' },
-    { 'dcode': 3, 'dname': '기획팀', 'ecode': 3, 'name': '박도윤' }
-]
-// 1열 ==========================================================================================================================================================================
+// let departmentStaffList = [
+//     { 'dcode': 1, 'dname': '개발팀', 'ecode': 1, 'name': '김민준' },
+//     { 'dcode': 2, 'dname': '디자인팀', 'ecode': 2, 'name': '이서연' },
+//     { 'dcode': 3, 'dname': '기획팀', 'ecode': 3, 'name': '박도윤' }
+// ]
 
-let finaldcode = 2;
+// 1열 ==========================================================================================================================================================================
 
 // [1] 전체조회 함수 
 departmentPrint()
 function departmentPrint() {
-    let tbody = document.querySelector('.deptTbody')
+    let tbody = document.querySelector('.col-left > .card > table > tbody')
     let html = ""
     for (let i = 0; i <= departmentList.length - 1; i++) {
         let department = departmentList[i]
         html += `<tr>
-                    <td>${department.dname}</td>
-                    <td>
-                        <button class="updateBtn" onclick="departmentUpdate(${department.dcode})">수정</button>
-                        <button class="updateBtn1" onclick="departmentDelete(${department.dcode})">삭제</button>
-                    </td>
-                 </tr>`
+              <td>${departmentList[i].dname}</td>
+              <td class="action-links align-right">
+                <a href="#" class="link-edit" onclick = 'departmentUpdate(${departmentList[i].dcode})'>수정</a>
+                <a href="#" class="link-delete" onclick = 'departmentDelete(${departmentList[i].dcode})'>삭제</a>
+              </td>
+            </tr>`
     }
     tbody.innerHTML = html
 }
-
+let finaldcode = 2; //마지막으로 쓴 부서번호(전역변수)
 function departmentAdd() {
-    let input = document.querySelector('.deptNameInput')
+    let input = document.querySelector('.col-left > .card > .dept-input-group > input')
     let dname = input.value
 
     if (dname == "") {
