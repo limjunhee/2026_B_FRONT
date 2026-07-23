@@ -41,49 +41,60 @@ function departmentPrint() {
     }
     tbody.innerHTML = html
 }
-let finaldcode = 2; //마지막으로 쓴 부서번호(전역변수)
-function departmentAdd() {
-    let input = document.querySelector('.col-left > .card > .dept-input-group > input')
-    let dname = input.value
 
-    if (dname == "") {
+let finaldcode = 3; //마지막으로 쓴 부서번호(전역변수)
+function departmentAdd() {
+    let department = document.querySelector('.col-left > .card > .dept-input-group > input').value
+    if (department == "") {
         alert('부서명을 입력하세요.')
         return
     }
 
     for (let i = 0; i <= departmentList.length - 1; i++) {
-        if (departmentList[i].dname == dname) {
+        if (departmentList[i].dname == department) {
             alert('이미 존재하는 부서입니다.')
             return
         }
     }
-
-    let object = { dcode: finaldcode + 1, dname: dname }
-    departmentList.push(object)
     finaldcode += 1
+    let object = { dcode: finaldcode, dname: department }
+    departmentList.push(object)
+    console.log(object)
 
-    input.value = ""
+    department.value = ""
     departmentPrint()
+    employeePrint()
+    vacationPrint()
 }
 // [3] 수정 함수
 function departmentUpdate(dcode) {
     for (let i = 0; i <= departmentList.length - 1; i++) {
         if (departmentList[i].dcode == dcode) {
-            let newdname = prompt('수정할 부서명을 입력하세요.', departmentList[i].dname)
+            let newdname = prompt('수정할 부서명을 입력하세요.')
             if (newdname == null || newdname == "") { return }
             departmentList[i].dname = newdname
             departmentPrint()
+            employeePrint()
+            vacationPrint()
             return
         }
     }
 }
 
 function departmentDelete(dcode) {
+    for(let index = 0; index <= employeeList.length - 1; index++){
+        if (dcode == employeeList[index].dcode) {
+            alert("부서에 소속되어 있는 인원이 존재합니다.")
+            return;
+        }
+    }
     for (let i = 0; i <= departmentList.length - 1; i++) {
         if (departmentList[i].dcode == dcode) {
             departmentList.splice(i, 1)
             alert('삭제 성공')
             departmentPrint()
+            employeePrint()
+            vacationPrint()
             return
         }
     }
@@ -94,6 +105,16 @@ function departmentDelete(dcode) {
 // [1] 전체조회 함수 
 employeePrint() // JS가 열릴때 최초 1번 실행 
 function employeePrint() {
+    // ---------------------[사원 추가 카드에 select 프린트(부서 변동 실시간 변동 반영)]----------------------------------------------------
+    let options = ''
+    let selectValues = document.querySelector(".col-center > .card > form > .input-row > .form-group > select")
+    for(let i = 0; i <= departmentList.length - 1; i++){
+        options += `<option>${departmentList[i].dname}</option>`
+    }
+    selectValues.innerHTML = options
+
+
+    // -----------------------[사원 목록 프린트]---------------------------------------------------------
     // 1. 어디에
     let tbody = document.querySelector('.col-center > .card.sub-section> table > tbody')       // 해보고 안되면 #main table body로 수정.
     // 2. 무엇을 , 배열내 모든 객체(자료) 들을 HTML(문자열)형식 구성
@@ -104,7 +125,7 @@ function employeePrint() {
             if (department == departmentList[j].dcode) { department = departmentList[j].dname }
         }
         html += `<tr>
-                    <td><img src="https://placehold.co/100" alt="프로필" class="profile-img"></td>
+                    <td><img src="${employeeList[i].eimg}" alt="프로필" class="profile-img"></td>
                     <td>${employeeList[i].name}</td>
                     <td>${department}</td>
                     <td>${employeeList[i].position}</td>
@@ -125,11 +146,14 @@ function employeeDelete(ecode) {
         if (employeeList[i].ecode == ecode) {
             employeeList.splice(i, 1); // 2. 배열에서 요소 삭제 . splice( 인덱스번호 , 개수 )
             alert('삭제 성공');
-            employeePrint() // 3. 조회구역 최신화
+            departmentPrint();
+            employeePrint(); 
+            vacationPrint();// 3. 조회구역 최신화
             return // 주의할점 구분 : return function{}탈출  VS break for{}탈출
         } // if end 
     } // for end 
 } // f end 
+
 // [3] 수정 함수
 function employeeUpdate(ecode) {
     // 1. 수정할 ecode의 사원번호를 배열에서 찾는다.
@@ -147,7 +171,7 @@ function employeeUpdate(ecode) {
             employeeList[i].name = newEname // 2. 배열에서 특정한 요소값 사원이름 , 부서명,  직급
             employeeList[i].dcode = newDname
             employeeList[i].position = newPosition
-            employeePrint(); return;
+            departmentPrint(); employeePrint(); vacationPrint(); return;
         } //if end 
     } // for end 
 } // f end 
@@ -183,19 +207,31 @@ function employeeAdd() {
     employeeList.push(object); finalDcode += 1
     // 4. 성공  , 화면 최신화 
     alert('등록성공');
+    departmentPrint();
     employeePrint();
-} // f end 
+    vacationPrint();
+} // f end
 
 
 
 
-/*3열 =========================================================================================================================================================*/
+/* ================================================== [3열] =======================================================================================================*/
 
 // 휴가신청 ====================================================================================================
 vacationPrint()
 
 //사원 휴가신청 데이터 변경 시 업데이트 (READ)
 function vacationPrint (){
+
+    // ---------------------[휴가 신청 추가 카드에 select 프린트(부서 변동 실시간 변동 반영)]----------------------------------------------------
+    let options = ''
+    let selectValues = document.querySelector(".col-right > .card > form > .form-group > select")
+    for (let i = 0; i <= employeeList.length - 1; i++) {
+        options += `<option>${employeeList[i].name}</option>`
+    }
+    selectValues.innerHTML = options
+
+    //=====================================================================================================
     // 표시할 곳 -> 사원 휴가신청 전체 목록 카드
     let fbody = document.querySelector( '.col-right > .card.sub-section')
     let html = ' '
@@ -214,7 +250,7 @@ function vacationPrint (){
     fbody.innerHTML = html
 }
 
-// 사원 휴가 신청 카드에서 신청버튼 클릭 시
+// 사원 휴가 신청 카드에서 신청버튼 클릭 시(CREATE)
 function vacationAdd () {
     // 1. 입력받은 값을 가져오기 ---------------------------------------------------------------------------------
     // 사원 이름
@@ -255,11 +291,13 @@ function vacationAdd () {
     console.log(newVacation)
     vacationList.push(newVacation)
     lastVcode ++ // 신청내역 식별자 1 더하기
-    
+    departmentPrint()
+    employeePrint()
     vacationPrint()
+    
 }
 
-// 사원 휴가내역 삭제
+// 사원 휴가내역 삭제(DELETE)
 function vacationDelete(vcode){
     console.log(vcode)
     for(let i = 0; i <= vacationList.length - 1; i++){
@@ -267,6 +305,8 @@ function vacationDelete(vcode){
             vacationList.splice(i,1)
             alert("휴가 내역을 삭제했습니다.")
 
+            departmentPrint()
+            employeePrint()
             vacationPrint()
             return;
         }
