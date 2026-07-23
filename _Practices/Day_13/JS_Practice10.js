@@ -27,22 +27,38 @@ login() 구현:
 일치하는 정보를 찾지 못하면, "동일한 회원정보가 없습니다. 로그인실패" 알림창을 띄웁니다.
 */
 
-let memberList = [ {'no': 1, 'id': 'testid', 'pw': 'testpw'} ]
+// let memberList = [ {'no': 1, 'id': 'testid', 'pw': 'testpw'} ]
 let finalNo = 1
+
 
 function signUp() {
     let newId = document.querySelector('.signId').value
     let newPw = document.querySelector('.signPw').value
-    if (newId == '' || newPw == '') {
+    let memberList = JSON.parse(localStorage.getItem('memberList'))
+    
+    if (newId == '' || newPw == '') { //유효성 검사
         alert("회원가입 시 아이디와 비밀번호는 필수 입력사항입니다.")
         return
     }
-    finalNo += 1
+
+    // console.log(memberList) //아무것도 없으면 null(최초등록하는 상황일 경우)
+    if(memberList == null){
+        memberList = []
+    }
+
+    let finalNo = memberList.length == 0 ? 1 : memberList[ memberList.length - 1].no+1
+
+    // 입력값 객체화
     let newMember = { 'no': finalNo, 'id': newId, 'pw': newPw }
-    memberList.push(newMember)
-    sessionStorage.setItem('memberList', JSON.stringify(memberList))
-    sessionStorage.getItem('memberList')
+    // 배열에 등록
+    memberList.push(newMember); console.log(memberList);
+    alert('등록 성공')
+
+    // localStorage에 memberList 배열 저장하기
+    localStorage.setItem('memberList', JSON.stringify(memberList))
+    localStorage.getItem('memberList')
 }
+
 
 function login() {
     let loginId = document.querySelector('.loginId').value
@@ -53,7 +69,9 @@ function login() {
         return
     }
 
-    let members = JSON.parse(sessionStorage.getItem( 'memberList' ))
+    let members = JSON.parse(localStorage.getItem( 'memberList' ))
+    if (members == null){return}
+    
     for(let i = 0; i <= members.length - 1; i++){
         if (members[i].id == loginId & members[i].pw == loginPw){
             alert("로그인 성공.")
