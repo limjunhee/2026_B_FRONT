@@ -28,7 +28,7 @@ login() 구현:
 */
 
 // let memberList = [ {'no': 1, 'id': 'testid', 'pw': 'testpw'} ]
-let finalNo = 1
+// let finalNo = 1
 
 
 function signUp() {
@@ -71,7 +71,7 @@ function login() {
 
     let members = JSON.parse(localStorage.getItem( 'memberList' ))
     if (members == null){return}
-    
+
     for(let i = 0; i <= members.length - 1; i++){
         if (members[i].id == loginId & members[i].pw == loginPw){
             alert("로그인 성공.")
