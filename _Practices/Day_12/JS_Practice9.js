@@ -95,26 +95,22 @@ function departmentDelete(dcode) {
 employeePrint() // JS가 열릴때 최초 1번 실행 
 function employeePrint() {
     // 1. 어디에
-    let tbody = document.querySelector('#main table tbody')       // 해보고 안되면 #main table body로 수정.
+    let tbody = document.querySelector('.col-center > .card.sub-section> table > tbody')       // 해보고 안되면 #main table body로 수정.
     // 2. 무엇을 , 배열내 모든 객체(자료) 들을 HTML(문자열)형식 구성
     let html = ""
     for (let i = 0; i <= employeeList.length - 1; i++) {
-        let employee = employeeList[i] // i번째 사원객체 1명 
-        // ++ 현재 i번째 사원의 부서명에 해당하는 부서번호 찾기
-        let dname = ''
-        for (let j = 0; j <= departmentStaffList.length - 1; j++) {
-            if (departmentStaffList[j].dcode == employee.dcode) {
-                dname = departmentStaffList[j].dname;
-                break;
-            }
-        } // 그 다음 , html에 사원 이미지, 이름, 부서 , 직급 입력
-        html += `<tr>       
-                    <td> <img src=${employee.eimg} /> </td>
-                    <td> ${dname} </td> <td> ${employee.ename} </td> 
-                    <td> ${employee.eposition} </td> 
-                    <td> 
-                        <button class="deleteBtn" onClick="employeeLDelete( ${employee.dcode} )">삭제</button> 
-                        <button class="updateBtn" onClick="employeeUpdate( ${employee.dcode} )">수정</button> 
+        let department = employeeList[i].dcode
+        for (let j = 0; j <= departmentList.length - 1; j++){
+            if (department == departmentList[j].dcode) { department = departmentList[j].dname }
+        }
+        html += `<tr>
+                    <td><img src="https://placehold.co/100" alt="프로필" class="profile-img"></td>
+                    <td>${employeeList[i].name}</td>
+                    <td>${department}</td>
+                    <td>${employeeList[i].position}</td>
+                    <td class="action-links align-right">
+                        <a href="#" class="updateBtn" onclick='employeeUpdate(${employeeList[i].ecode})'>수정</a>
+                        <a href="#" class="deleteBtn" onclick='employeeDelete(${employeeList[i].ecode})'>삭제</a>
                     </td>
                 </tr>`
     } // for end 
@@ -142,9 +138,15 @@ function employeeUpdate(ecode) {
             let newEname = prompt('수정할 사원명 입력하세요.')
             let newDname = prompt('수정할 부서명 입력하세요.')
             let newPosition = prompt('수정할 직급 입력하세요.')
-            employeeList[i].ename = newEname // 2. 배열에서 특정한 요소값 사원이름 , 부서명,  직급
-            employeeList[i].dname = newDname
-            employeeList[i].eposition = newPosition
+            for(let j = 0; j <= departmentList.length - 1; j++){
+                if (newDname == departmentList[j].dname){
+                    newDname = departmentList[j].dcode
+                }
+            }
+            
+            employeeList[i].name = newEname // 2. 배열에서 특정한 요소값 사원이름 , 부서명,  직급
+            employeeList[i].dcode = newDname
+            employeeList[i].position = newPosition
             employeePrint(); return;
         } //if end 
     } // for end 
@@ -155,12 +157,14 @@ let finalDcode = 3 // 현재 마지막으로 사용한 부서코드
 function employeeAdd() {
     // 1. 입력받은 값 가져오기 
     let name = document.querySelector('.ename').value
-    let code = document.querySelector('.dname').value
+    let department = document.querySelector('.col-center > .card > form > .input-row > .form-group > select').value
     let position = document.querySelector('.eposition').value
     let image = document.querySelector('.eimg').files[0] // + 첨부파일은 .files[0] 속성에서 첨부파일의 첫번째 자료 가져오기 
+    console.log(name, department, position, image)
+    
     // 꼼꼼히 ! , 유효성판단/검사
-    if (dcode == 'disabled') {
-        alert("부서선택해주세요");
+    if (department == '부서를 선택하세요') {
+        alert("부서를 선택하십시오.");
         return;
     }
 
@@ -168,9 +172,9 @@ function employeeAdd() {
     // pcode : 제품식별코드로 사용자가 지정하지 않고 *자동번호 부여* , 마지막사용된 제품코드에 + 1
     // pdate : 현재 시스템 날짜/시간 함수 , new Date()
     // 현재연도 : new Date().getFullYear()  ,  현재월(0:1월~11:12월) : new Date().getMonth() , 현재일 : new Date().getDate()
-    //console.log( new Date().getFullYear() , new Date().getMonth() , new Date().getDate()  ) 
+    console.log( new Date().getFullYear() , new Date().getMonth() , new Date().getDate()  ) 
     let object = {
-        ename: name, dname: code, eposition: position,
+        name: name, dname: department, position: position,
         //만약에 첨부파일 선택이 없으면(undifined)
         eimg: image == undefined ? 'https://placehold.co/100x100' : URL.createObjectURL(image),      //  URL.createObjectURL ( 객체 ) 객체 (가상)주소 
         dcode: finalDcode + 1
