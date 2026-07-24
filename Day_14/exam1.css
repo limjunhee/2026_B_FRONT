@@ -16,13 +16,35 @@
 }
 
 .box3{
-    /* 상대적인 위치로 변경이 가능해짐. */
+    /* 상대적인 위치로 변경이 가능해짐.(원래 있던 자리 기준으로 이동한다) */
     position: relative;
     top: 50px; /* top:50px -> 위에서부터 50px만큼 아래로 이동 */
     left: 50px; /* left:50px -> 왼쪽에서부터 50px만큼 오른쪽으로 이동 */
 }
 
 .box4{
-    /* 절대적인 위치 */
+    /* 절대적인 위치 absolute */
+    /* 가장 가까운 position 상위요소 위치를 따라간다*/
+    /* 지금 이 박스 기준으로 가장 가까운 상위요소는 <body>*/
     position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.box5{
+    position: fixed; /* 디바이스의 화면에 고정 */
+    bottom: 50px; /* 아래에서 위로 이동 (값이 음수면 아래로)*/
+    right: 50px; /* 오른족에서부터 50px 오른쪼긍로 이동, 음수면 왼쪽 */
+}
+
+
+.parent{
+    /* 부모에 position을 배치해야 absolute 포지션을 가진 요소가 
+    부모요소 바깥으로 나가지 않는다*/
+    position: relative;
+}
+.box6{
+    position: absolute;
+    top: 30px;
+    left: 30;
 }
