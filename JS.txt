@@ -239,3 +239,49 @@ console.log(age)   // 40인거 확인
         new Date().getFullYear()    : 연도(year) 반환
         new Date().getMonth()       : 월(month) 반환
         new Date().getDate()        : 일(Day) 반환
+        new Date().getHours()       : 시
+        new Date().getMinutes()     : 분
+        new Date().getSeconds()     : 초
+
+
+
+- 웹 스토리지 : 브라우저의 저장소 *문자열 타입으로만 저장 -> 토큰: 브라우저의 로그인 기록 등
+    [1] 세션 스토리지
+        - sessionStroage 객체 -> 브라우저/서버가 모두 종료되면 초기화
+
+    [2] 로컬 스토리지
+        - localStroage 객체 -> 브라우저 종료되어도 유지됨
+    
+    - 사용법
+        .setItem( 'Key', value )        : 스토리지에 자료를 저장
+        .getItem( 'Key' )               : 스토리지에 있는 자료 호출
+        .remove( 'Key' )                : 스토리지에 있는 자료 삭제
+
+    - JSON ( 자바 스크립트 객체 ) 형변환
+        JSON -> String : JSON.Stringify( {객체} )
+        String -> JSON : JSON.parse( '문자열' )
+    
+    * 스토리지는 인증 기능에서 많이 응용
+
+- 쿼리스트링 : http 주소 웹 주소(경로 / URL)에 매개변수 포함, *문자열 타입*
+    1. 목적 : 페이지 이동간에 자료 전달 , *식별자*
+    2. 사용법
+        URL ? 매개변수명 = 값 & 매개변수명 = 값
+        new URLSearchParams( location.search ).get( '매개변수명' ) : URL 존재하는 매개변수값 호출
+
+
+- 페이지 전환
+    1. HTML : <a> 마크업 사용 -> href = '여기'
+        <a href ='here.html?PK=${obj.pk}'></a>
+    2. JS : location.href = 'URL'
+
+
+- 인터벌
+    특정한 주기(시간, 밀리초 -> 1초의 1/1000)로 함수를 실행
+
+    1. 사용처 - 인증 시간 설정(#분 내로 인증 번호 입력하게 할 때), CSS( 이미지 자동 슬라이드 )
+    2. 사용법
+        let param = setInterval( 함수명, 밀리초 ) -> [밀리초] 마다 [함수명]을 실행하겠다.
+        clearInterval(인터벌객체)                 -> 인터벌 종료/삭제
+
+
