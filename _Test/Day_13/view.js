@@ -42,7 +42,6 @@ function deleteBoard(){
     console.log(object)
      
     let pw = prompt('비밀번호를 입력하세요')
-
     if (pw != object.pw) { alert('비밀번호가 일치하지 않습니다.'); return;}
 
     for (let i = 0; i <= boardList.length - 1; i++) {

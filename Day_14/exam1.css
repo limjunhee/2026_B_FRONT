@@ -1,0 +1,28 @@
+/*
+    position: 
+
+*/
+
+.box{
+    width: 100px; height: 100px;
+    background-color: yellow;
+    border: 1px solid red;
+}
+
+.box2{
+    /* 요소 배치 순서 : static(기본값), 정적, 위치 변경 불가*/
+    position: static;
+    left: 50px; /* 위치 변경 X */
+}
+
+.box3{
+    /* 상대적인 위치로 변경이 가능해짐. */
+    position: relative;
+    top: 50px; /* top:50px -> 위에서부터 50px만큼 아래로 이동 */
+    left: 50px; /* left:50px -> 왼쪽에서부터 50px만큼 오른쪽으로 이동 */
+}
+
+.box4{
+    /* 절대적인 위치 */
+    position: absolute;
+}

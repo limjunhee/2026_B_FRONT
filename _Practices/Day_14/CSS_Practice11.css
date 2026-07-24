@@ -1,0 +1,143 @@
+* {
+    /* border: 1px solid green; */
+    box-sizing: content-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+li{
+        list-style-type: none;
+}
+/* topHeader */
+header > #topHeader{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px #dbdbdb solid;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0px 40px 0px 40px;
+}
+
+header > #topHeader > span {
+    margin: 0px 10px 5px 10px;
+    font-size: 12px;
+    
+}
+
+header > #topHeader > span > a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+header > #topHeader > span > a > img {
+    margin-top: 5px;
+}
+#topMenuIcon{
+    width: 17px;
+    height: 17px;
+}
+header > #bottomHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+}
+
+#headerLogo{
+    width: 150px;
+    height: 19px;
+}
+/* bottomheader */
+header > #bottomHeader{
+    height: 80px;
+}
+header > #bottomHeader > li > a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    margin: 0px 10px 0px 10px;
+}
+
+header > #bottomHeader > #imageLi{
+    margin-right: 40px;
+}
+header > #bottomHeader > li > #red_a{
+    color: red;
+}
+
+#searchBox{
+    border-bottom: black 1px solid;
+    margin-left: 30px;
+}
+
+#searchBox > input {
+    border: white;
+}
+
+#searchIcon {
+    width: 20px;
+    height: 20px;
+}
+
+/* main_img */
+#mainImage{
+    width: 100%;
+}
+
+#content{
+    margin-top: 70px;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+}
+
+#contentTitle{
+    display: block;
+    align-items: stretch;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.title{
+    font-size: 20px;
+}
+
+.comment{
+    margin-top: 20px;
+    color: #4f4e4e;
+}
+
+#items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#item{
+    width: 380px;
+    margin: 30px 0px;
+}
+.itemImg{
+    width: 100%;
+}
+
+.colorAndReview{
+    display: flex;
+    justify-content: space-between;
+}
+.itemInfo > .colorAndReview > .color > span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: #4f4e4e 1px solid;
+
+}
+#itemPrice{
+    position: relative;
+}
+.discountPercent{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
