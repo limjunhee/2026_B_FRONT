@@ -9,8 +9,12 @@
 li{
         list-style-type: none;
 }
+/* #wrap{
+    height: 100%;
+} */
+
 /* topHeader */
-header > #topHeader{
+#topHeader{
     display: flex;
     justify-content: flex-end;
     border-bottom: 1px #dbdbdb solid;
@@ -20,29 +24,23 @@ header > #topHeader{
     padding: 0px 40px 0px 40px;
 }
 
-header > #topHeader > span {
+#topHeader > span {
     margin: 0px 10px 5px 10px;
     font-size: 12px;
     
 }
 
-header > #topHeader > span > a {
+#topHeader > span > a {
     text-decoration: none;
     color: black;
     font-size: 12px;
 }
-header > #topHeader > span > a > img {
+#topHeader > span > a > img {
     margin-top: 5px;
 }
 #topMenuIcon{
     width: 17px;
     height: 17px;
-}
-header > #bottomHeader{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px 40px 0px 40px;
 }
 
 #headerLogo{
@@ -50,20 +48,54 @@ header > #bottomHeader{
     height: 19px;
 }
 /* bottomheader */
-header > #bottomHeader{
+#bottomHeader{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
     height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
-header > #bottomHeader > li > a {
+
+#bottomHeader > li{
+    position: relative;
+}
+#bottomHeader > li > a {
     text-decoration: none;
     color: black;
     font-size: 12px;
     margin: 0px 10px 0px 10px;
+    position: relative;
 }
 
-header > #bottomHeader > #imageLi{
+#bottomHeader > #imageLi{
     margin-right: 40px;
 }
-header > #bottomHeader > li > #red_a{
+
+.submenu {
+    top: 40px; left: -30px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    width: 100px;
+}
+
+.submenu > li {
+    text-align: center;
+    margin: 10px;
+}
+
+/* li에 hover에 마우스를 올렸을 때 서브메뉴를 표시시킨다. */
+#bottomHeader > li:hover .submenu {
+    display: block;
+}
+
+#bottomHeader > li > #red_a{
     color: red;
 }
 
@@ -86,6 +118,7 @@ header > #bottomHeader > li > #red_a{
     width: 100%;
 }
 
+/* content */
 #content{
     margin-top: 70px;
     width: 1600px;
@@ -134,4 +167,83 @@ header > #bottomHeader > li > #red_a{
     position: absolute;
     right: 0px;
     top: 0px;
+}
+
+/* footer */
+#footer{
+    margin-top: 100px;
+
+}
+
+#topFooter{
+    padding: 40px 0px 40px 0px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-around;
+}
+#topFooter>.footer>h2 {
+    font-size: 20px;
+}
+#topFooter > .footer > div {
+    font-size: 11px;
+}
+#topFooter > .footer > .footerTitle{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#topFooter>.footer>ul>li {
+    margin: 7px 0px 7px 0px;
+}
+#topFooter>.footer> ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+#bottomFooter{
+    margin: 20px 0px 20px 0px;
+}
+
+#bottomFooter > div{
+    text-align: center;
+    color: #c0bfbf;
+    font-size: 10px;
+}
+
+#popup{
+    display: block;
+    position: fixed;
+    right: 0px;
+    top: 30%;
+}
+
+.popupMenu > li {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #b6b5b5 1px solid;
+}
+
+.popupMenu>li>img{
+    width: 20px;
+    height: 20px;
+}
+
+#popup > .popupMenu > li > .popupSub {
+    position: absolute;
+    right: 35px;
+    display: none;
+    width: 90px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#popup>.popupMenu>li:hover .popupSub{
+    display: block;
 }
