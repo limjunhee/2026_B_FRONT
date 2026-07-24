@@ -88,9 +88,7 @@ header > #bottomHeader > li > #red_a{
 
 #content{
     margin-top: 70px;
-    /* display: flex;
-    justify-content: center; */
-    /* align-items: center; */
+    width: 1600px;
 }
 
 #contentTitle{
@@ -114,13 +112,9 @@ header > #bottomHeader > li > #red_a{
     justify-content: space-between;
 }
 
-#item{
-    width: 380px;
-    margin: 30px 0px;
-}
-.itemImg{
-    width: 100%;
-}
+#item{ width: 300px; margin: 30px; }
+
+.itemImg{ width: 100%; }
 
 .colorAndReview{
     display: flex;

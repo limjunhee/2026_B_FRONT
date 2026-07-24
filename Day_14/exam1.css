@@ -48,3 +48,15 @@
     top: 30px;
     left: 30;
 }
+
+.header{
+    display: flex;
+    background-color: beige;
+    position: sticky; /* 특정한 디바이스(화면)에서 벗어나면 위치 고정 */
+    top: 50px; /* 위에 붙이겠다는 뜻 */
+    z-index: -1; /* position 사용하는 요소들간의 겹침 우선순위 선정(높을수록 우선순위가 높음 -> 위에 겹쳐짐)*/
+}
+
+.header > ul {
+    display: flex;
+}

@@ -1,0 +1,44 @@
+/* a마크 기본값 제거*/
+a {text-decoration: none; color: black; }
+
+/* 2. 선택자이름:hover -> 해당 선택자에 마우스를 올렸을 때 */
+a:hover{
+    color: red;
+}
+
+/* 3. 선택자이름:visited -> 해당 브라우저 내 방문/접속한 적이 있는 링크 */
+a:visited{ color: yellow;}
+
+/* 4.  선택자이름.active -> 해당 선택자에 마우스 클릭했을 때 */
+a:active{ color: blue;}
+
+/* 선택자이름::before -> 선택자의 앞에 컨텐츠 추가 가능*/
+.box1::before{ 
+    content: "[가상요소 앞쪽 구역]"
+}
+
+.box2::after{
+    content: "[가상요소 뒤쪽 구역]";
+}
+
+li{list-style-type: none;} /* 글머리 제거 */
+.box2 > li::before { content: "§";} /* 특수문자, 이모지 삽입 가능 */
+.box2 > li::after { content: url(../img/짱구흰둥이.jpg)} /* 이미지 삽입 가능 */
+
+#header{ background-color: beige; }
+#header > ul { display: flex; justify-content: center; }
+
+.mainmenu > li { padding: 10px; position: relative;}
+.submenu{
+    position: absolute; /*절대 위치: position이 지정된 상위요소 기준점으로 위치 이동*/
+    top:40px; left: -5px;/* 위에서 10px 아래로 이동 */
+    background-color: beige;
+    padding: 10px;
+    width: 50px;
+    display: none;
+}
+
+/* li에 hover에 마우스를 올렸을 때 서브메뉴를 표시시킨다. */
+.mainmenu>li:hover .submenu{
+    display: block;
+}
