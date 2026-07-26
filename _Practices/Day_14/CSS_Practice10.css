@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px solid green; */
+}
+
+li{
+    list-style-type: none;
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    box-shadow: 0px 5px 20px rgb(175, 175, 175);
+    color : blue;
+    font-size: 20px;
+}
+
+body{
+    text-align: center;
+    line-height: 75px;
+}
+.mainMenu{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+.mainMenu > li{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    width: 90px;
+    height: 90px;
+    line-height: 80px;
+    margin-top: 20px;
+}
+
+.subMenu{
+    display: none;
+    position: absolute;
+    bottom: 90px;
+    left: 7px;
+}
+
+.subMenu > li{
+    margin: 10px 0px 20px 0px;
+    font-weight: bold;
+}
+
+.top{
+    background-color: rgb(216, 236, 244);
+}
+
+.naver{
+    background-color: rgb(216, 248, 238);
+}
+
+.help{
+    background-color: rgb(253, 230, 187);
+}
+
+.chat{
+    background-color: rgb(240, 218, 240);
+}
+
+.mainMenu>li:hover .subMenu{
+    display: block;
+}
