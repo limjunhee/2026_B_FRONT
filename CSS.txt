@@ -63,33 +63,59 @@ HTML : 웹페이지 뼈대, JS : 동적 이벤트, CSS : 웹페이지 꾸미기
         flex;
 
     [4] box-sizing : width 크기 기준점
-        content-box : 구역 크기를 컨텐츠 기준으로(기본값)
-        border-box : 구역 크기를 컨텐츠 + 안쪽 여백(padding) 포함시킴
+        content-box :           구역 크기를 컨텐츠 기준으로(기본값)
+        border-box :            구역 크기를 컨텐츠 + 안쪽 여백(padding) 포함시킴
 
-    [5] flex 속성: 하위 요소들의 배치 방법 지정
+    [5] flex 속성: 하위 요소들의 배치 방법 지정 (display: flex;)
         1. flex-wrap
-            - nowrap; : 하위 요소들의 크기가 더 크다면 자동으로 크기 맞춤(기본값)
-            - wrap; : 하위 요소들의 크기가 더 크다면 자동으로 줄바꿈
+            - nowrap; :         하위 요소들의 크기가 더 크다면 자동으로 크기 맞춤(기본값)
+            - wrap; :           하위 요소들의 크기가 더 크다면 자동으로 줄바꿈
         
         2. flex-direction: 
             - row;(기본값) : 하위 요소들의 가로 방향 배치
             - column; : 하위 요소들의 세로 방향 배치
 
-        3. justify-content: 
-            - flex-start; : 가로 왼쪽 정렬(기본값)
-            - flex-end; : 가로 오른쪽 정렬
-            - center; : 가로 가운데 정렬
-            - space-between; : 양쪽 끝 여백 없이 여백 균등 정렬
-            - space-around; : 양쪽 여백 끝에 사이 여백의 50% 여백 주고 여백 균등 정렬
-            - space-evenly; : 양쪽 여백 끝과 사이 여백 균등하게 정렬
+        3. justify-content:     가로 정렬
+            - flex-start; :     가로 왼쪽 정렬(기본값)
+            - flex-end; :       가로 오른쪽 정렬
+            - center; :         가로 가운데 정렬
+            - space-between; :  양쪽 끝 여백 없이 여백 균등 정렬
+            - space-around; :   양쪽 여백 끝에 사이 여백의 50% 여백 주고 여백 균등 정렬
+            - space-evenly; :   양쪽 여백 끝과 사이 여백 균등하게 정렬
 
-        4. align-items:
-            - stretch; : 하위 요소들의 세로 크기가 고정이 아니면 자동으로 부모 세로 크기만큼 늘어남
-                            (기본값)
-            - center; : 세로 가운데 정렬
-            - flex-end; : 세로 밑변 정렬
-            - flex-start; : 세로 윗변 정렬
+        4. align-items: 세로 정렬
+            - stretch; :        하위 요소들의 세로 크기가 고정이 아니면 자동으로 부모 세로 크기만큼 늘어남 (기본값)
+            - center; :         세로 가운데 정렬
+            - flex-end; :       세로 밑변 정렬
+            - flex-start; :     세로 윗변 정렬
 
         5. gap: (요소 간 간격)
-            - gap : [value]; (ex.gap:20px;) : 가로(행), 세로(열)의 간격을 직접 동일하게 지정
-            - gap : [row-gap] [column-gap]; (ex. gap: 10px 20px;) : 행 간격, 열 간격을 다르게 설정
+            - gap :             [value]; (ex.gap:20px;) : 가로(행), 세로(열)의 간격을 직접 동일하게 지정
+            - gap :             [row-gap] [column-gap]; (ex. gap: 10px 20px;) : 행 간격, 열 간격을 다르게 설정
+
+    
+    [6] 크기 단위
+        1. px :             절대적 크기
+        2. % :              부모 요소 기준에서 상대적 크기
+        3. rem :            (루트html) 상대 크기
+        4. vw, vh :         (디바이스, 브라우저) 상태 크기
+
+
+    [7] position
+        1. static :         정적인 위치, 위치 변경 불가(기본값)
+        2. relative :       상대적인 위치(자기 기준)
+        3. absolute :       절대적인 위치(부모 기준), 단 부모 요소중 position이 설정된(static 제외) 부모 요소를 기준으로 함
+                            (아무도 position이 없다면 body를 기준으로 함)
+        4. fixed :          (디바이스/브라우저)의 한 곳에 위치 고정
+        5. sticky :         스크롤이 넘어가 특정 화면에서 벗어나면 fixed 처럼 고정되어 따라다니기 시작함
+
+        * 위치 변경 시 left, right, top, bottom을 사용하여 위치 변경 가능 (static 제외)
+        * z-index : position이 설정된 요소들이 겹쳤을 때 위로 올라올 우선순위를 정해줌
+                    (숫자가 클 수록 앞에 배치된다)
+
+
+    [8] 가상 클래스/요소
+        1. 마크업:hover , 해당 마크업에 마우스를 올렸을 때
+        2. 마크업::before , 해당 마크업 앞에 가상 컨텐츠(텍스트/이미지) 추가
+        3. 마크업::after , 해당 마크업 뒤에 가상 컨텐츠 추가
+        

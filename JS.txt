@@ -283,5 +283,3 @@ console.log(age)   // 40인거 확인
     2. 사용법
         let param = setInterval( 함수명, 밀리초 ) -> [밀리초] 마다 [함수명]을 실행하겠다.
         clearInterval(인터벌객체)                 -> 인터벌 종료/삭제
-
-
