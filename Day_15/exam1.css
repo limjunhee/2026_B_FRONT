@@ -1,0 +1,41 @@
+/* 테이블 꾸미기 */
+.basicTable{
+    border: 1px solid black;
+    width: 500px;
+}
+
+.basicTable th , .basicTable td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* 선택자: nth-child( n ), 동일한 선택자들 중에서 특정 n번째의 요소를 선택 */
+.basicTable td:nth-child(1){ /* 중복 선택자들 중에서 첫번째 선택자 */
+    background-color: aqua;
+}
+
+.basicTable td:nth-child(3){
+    background-color: beige;
+}
+
+
+/* 
+    선택자[속성명] , 특정한 속성을 사용하는 마크업  
+    input[type=text]
+*/
+.basicTable td[colspan]{
+    text-align: right;
+    
+}
+
+.styleTable{ width: 700px; border-collapse: collapse; /* 이중 테두리를 하나의 테두리로 병합한다 */}
+
+.styleTable th, .styleTable td { border: 1px solid black; }
+
+/* 선택자:nth-of-type( even/odd ), 홀수odd/짝수even 선택자 */
+.styleTable > tbody > tr:nth-of-type(odd){ background-color: #eeeeee; }
+
+.styleTable > tbody > tr:hover{
+    background-color: gray;
+    color: white;
+}

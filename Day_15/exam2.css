@@ -1,0 +1,21 @@
+
+.box{
+    border: 1px solid red;
+    padding: 10px;; margin-bottom: 100px;
+}
+
+.size1{ width: 200px; height: 200px; }
+
+/* 
+    최소 가로 사이즈 지정 
+    참고 : width의 기본값은 (부모기준)100%이다.
+*/
+.size2{ min-width: 600px; } /* 최소 가로 사이즈 설정 : 만약 600px보다 작아진다면 600px로 고정된다. */
+.size3{ max-width: 600px; } /* 최대 가로 사이즈 설정 : 만약 600px보다 커진다면 600px로 고정된다.*/
+
+
+/* overflow : 하위 컨텐츠(이미지/텍스트)가 넘쳤을 때 사용*/
+.size4{ width: 200px; height: 50px; overflow: visible; } /* visible - 넘치는 부분 그대로 보여줌(기본값) */
+.size5{ width: 200px; height: 50px; overflow: hidden; } /* hidden - 넘치는 부분만 숨김 */
+.size6{ width: 200px; height: 50px; overflow: scroll; } /* scroll - 넘치는 부분을 볼 수 있게 스크롤이 생김 */
+.size7{ width: 200px; height: 50px; overflow-y: scroll; } /* 세로로 넘치면 -> scroll 처리*/
